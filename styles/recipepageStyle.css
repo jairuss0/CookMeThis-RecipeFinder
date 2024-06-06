@@ -3,6 +3,8 @@
   --60-color: #F5F5F5;
   --30-color: #FBFCFA;
   --10-color: #25c338;
+  --dark-color: #191a1a;
+  --grey-color: #dddddd;
   --font-poppins: "Poppins";
 }
 
@@ -19,23 +21,47 @@ body {
 }
 
 .search-container {
-  padding: 1em;
   min-height: 50vh;
   align-content: center;
-}
-.search-container .search-box {
-  margin: 0 auto;
-  max-width: 1080px;
+  background-color: var(--30-color);
+  border-radius: 1em;
 }
 .search-container .search-box .title {
   text-align: center;
 }
+.search-container .search-box .title h3 {
+  font-size: 3em;
+  color: var(--10-color);
+}
 .search-container .search-box .finderInput {
+  border: 1px solid var(--grey-color);
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
 }
 .search-container .search-box .finderInput input {
   border: none;
   background: transparent;
   outline: none;
   width: 100%;
+  padding: 0.5em 0.5em;
+}
+.search-container .search-box .finderInput i {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  color: var(--10-color);
+}
+.search-container .search-box .finderInput i:hover {
+  color: var(--10-color);
+}
+
+.main-container .filter-container {
+  background-color: var(--30-color);
+  min-height: 50vh;
+}
+
+footer {
+  background-color: var(--30-color);
 }/*# sourceMappingURL=recipepageStyle.css.map */
