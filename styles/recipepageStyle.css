@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --60-color: #F5F5F5;
+  --30-color: #FBFCFA;
+  --10-color: #25c338;
+  --font-poppins: "Poppins";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--60-color);
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.search-container {
+  padding: 1em;
+  min-height: 50vh;
+  align-content: center;
+}
+.search-container .search-box {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+.search-container .search-box .title {
+  text-align: center;
+}
+.search-container .search-box .finderInput {
+  margin: 0 auto;
+}
+.search-container .search-box .finderInput input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+}/*# sourceMappingURL=recipepageStyle.css.map */
