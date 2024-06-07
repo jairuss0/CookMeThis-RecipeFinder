@@ -20,10 +20,13 @@ body {
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
+.search-section {
+  background-color: var(--30-color);
+}
+
 .search-container {
   min-height: 50vh;
   align-content: center;
-  background-color: var(--30-color);
   border-radius: 1em;
 }
 .search-container .search-box .title {
@@ -57,11 +60,56 @@ body {
   color: var(--10-color);
 }
 
-.main-container .filter-container {
-  background-color: var(--30-color);
+.main-section .main-container .filter-container {
   min-height: 50vh;
+  visibility: visible;
 }
-
-footer {
+.main-section .main-container .filter-container .filter-box {
   background-color: var(--30-color);
+  text-align: center;
+}
+.main-section .main-container .filter-container .filter-box .filter-title {
+  text-align: left;
+}
+.main-section .main-container .filter-container .filter-btn {
+  width: 100%;
+  border: none;
+  background-color: var(--10-color);
+  font-size: 1.3em;
+  color: var(--30-color);
+}
+.main-section .main-container .filter-container .filter-btn i {
+  color: var(--30-color);
+}
+.main-section .main-container .result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 1em 1em;
+}
+.main-section .main-container .result-container .title-recipes h3 {
+  color: var(--10-color);
+}
+.main-section .main-container .result-container .recipes .meal-card {
+  border: var(--10-color) solid 1px;
+}
+.main-section .main-container .result-container .load-more button {
+  font-size: 1.5em;
+  background-color: var(--10-color);
+  color: var(--30-color);
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+.main-section .main-container .result-container .goBack a {
+  border: none;
+  background: transparent;
+  color: var(--10-color);
+  cursor: pointer;
+}
+.main-section .main-container .result-container .goBack i {
+  color: var(--10-color);
 }/*# sourceMappingURL=recipepageStyle.css.map */
