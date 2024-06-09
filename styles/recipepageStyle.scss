@@ -41,6 +41,7 @@ body{
             h3{
                 font-size: 3em;
                 color: var(--10-color);
+                font-weight: bold;
             }
         
         }
@@ -75,31 +76,70 @@ body{
 .main-section{
     .main-container{
         .filter-container{
-            min-height: 50vh;
+            height: auto;
             visibility: visible;
             .filter-box{
                 background-color: var(--30-color);
                 text-align: center;
-              
-                .filter-title{
-                    text-align: left;
+                
+                div{
+                    .filter-title{
+                        padding-top: 1em;
+                      
+                        text-align: center;
+                        color: var(--10-color);
+                        font-size: 1.3em;
+                        font-weight: bold;
+                    }   
                 }
                 
+                
                 .meal-div{
+                    display: flex;
+                    flex-direction: column;
                     
+                    .meal-filter-btn{
+                        border: none;
+                        background-color: var(--30-color);
+                        transition: ease-in .3s;
+                        text-transform: capitalize;
+                        margin-bottom: .5em;
+                        &:hover{
+                            background-color: var(--10-color);
+                            color: var(--30-color);
+                        }
+                    }
                 }
                 .area-div{
-                    
+                    display: flex;
+                    flex-direction: column;
+                    transition: ease-in .3s;
+                    text-transform: capitalize;
+                  
+                    .area-filter-btn{
+                        border: none;
+                        background-color: var(--30-color);
+                        transition: ease-in .3s;
+                        text-transform: capitalize;
+                        margin-bottom: .5em;
+                        &:hover{
+                            background-color: var(--10-color);
+                            color: var(--30-color);
+                        }
+                    }
                 }
             }
             .filter-btn{
                 width: 100%;
                 border: none;
                 background-color: var(--10-color);
-                font-size: 1.3em;
+                font-size: 1.5em;
                 color: var(--30-color);
+                font-weight: 600;
+                transition: ease-in .3s;
                 i{
                     color: var(--30-color);
+                    margin-left: .3em;
                 }
             }
         }
@@ -114,12 +154,30 @@ body{
             .title-recipes{
                 h3{
                     color: var(--10-color);
-    
+                    font-weight: 600;
                 }
             }
             .recipes{
                 .meal-card{
-                    border: var(--10-color) solid 1px;
+                    background-color: var(--30-color);
+                    height: inherit;
+                    .meal-name{
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        text-transform: capitalize;
+                        font-size: 1em;
+                    }
+
+                    .recipe-btn{
+                        background-color: var(--10-color);
+                        border: none;
+                        color: var(--30-color);
+                        font-weight: 400;
+                        border-radius: .5em;
+                        font-size: 1em;
+                        padding: .4em .5em;
+                    }
+
                 }
             }
             .load-more{
@@ -130,7 +188,7 @@ body{
                     border: none;
                     cursor: pointer;
                     padding: .5em 1em;
-                    border-radius: .5em;
+                    border-radius: 1em;
                 }
             }
             .goBack{
@@ -139,6 +197,7 @@ body{
                     background: transparent;
                     color: var(--10-color);
                     cursor: pointer;
+                    text-decoration: none;
                 }
 
                 i{

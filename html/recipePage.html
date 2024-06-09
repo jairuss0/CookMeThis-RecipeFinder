@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../styles/navigation.css">
     <link rel="stylesheet" href="../styles/recipepageStyle.css">
     <script type="module" src="/js/findRecipe.js"></script>
-    
 </head>
 
 <body>
@@ -29,7 +28,7 @@
                 </div>
                 <div class="finderInput">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" autocomplete="off" placeholder="Example: egg">
+                    <input type="text" autocomplete="off" placeholder="Example: egg" id="recipeInput">
                 </div>
                 <div class="search-history"></div>
             </div>
@@ -44,18 +43,24 @@
                 <div class="filter-container col-md-3 position-sticky">
                     <!----Filter collpse-->
                     <button class="filter-btn" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse">
-                        Filter <i class="fa-solid fa-arrow-down arrow"></i>
+                        FILTER <i class="fa-solid fa-arrow-up arrow"></i>
                     </button>
                     
                     <div class="filter-box collapse show" id="filterCollapse">
-                        <p class="filter-title">Meal</p>
+                        <div>
+                            <p class="filter-title">Meal</p>
+                        </div>
+                        
                         <div class="meal-div" id="meal">
                             <button class="meal-filter-btn">Beef</button>
                             <button class="meal-filter-btn">Beef</button>
                             <button class="meal-filter-btn">Beef</button>
                             <button class="meal-filter-btn">Beef</button>
                         </div>
-                        <p class="filter-title">Area</p>
+                        <div>
+                            <p class="filter-title">Area</p>
+                        </div>
+                        
                         <div class="collapse show area-div" id="area">
                             <button class="area-filter-btn">Beef</button>
                             <button class="area-filter-btn">Beef</button>
@@ -72,39 +77,23 @@
                     </div>
                     <!---RECIPE RESULT-->
                     <div class="recipes">
-                        <div class="row g-1">
+                        <div class="row g-1 recipes-result">
                             <div class="col-lg-4 col-md-6">
-                                <div class="card meal-card" style="width: 100%;">
+                                <div class="card meal-card" style="width: 100%; min-height: 100%;">
                                     <img src="/assets/sample image.jpg" class="card-img-top" id="meal-img" alt="meal">
                                     <div class="card-body">
-                                        <p class="meal-namet">Some quick example text to build on the card title and
+                                        <p class="meal-name">Some quick example text to build on the card title and
                                             make
                                             up the bulk of the card's content.</p>
+                                        <button class="recipe-btn">See Recipe</button>    
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card meal-card" style="width: 100%;">
-                                    <img src="/assets/sample image.jpg" class="card-img-top" id="meal-img" alt="meal">
-                                    <div class="card-body">
-                                        <p class="meal-name">Some quick example text to build on the card title and make
-                                            up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card meal-card" style="width: 100%;">
-                                    <img src="/assets/sample image.jpg" class="card-img-top" id="meal-img" alt="meal">
-                                    <div class="card-body">
-                                        <p class="meal-name">Some quick example text to build on the card title and make
-                                            up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="load-more">
-                        <button>Load More</button>
+                        <button class="load-btn">Load More</button>
                     </div>
                     <div class="goBack">
                         <a href="#recipe">Back To Search <i class="fa-solid fa-arrow-up"></i></a>

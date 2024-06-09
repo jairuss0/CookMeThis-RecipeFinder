@@ -35,6 +35,7 @@ body {
 .search-container .search-box .title h3 {
   font-size: 3em;
   color: var(--10-color);
+  font-weight: bold;
 }
 .search-container .search-box .finderInput {
   border: 1px solid var(--grey-color);
@@ -61,25 +62,64 @@ body {
 }
 
 .main-section .main-container .filter-container {
-  min-height: 50vh;
+  height: auto;
   visibility: visible;
 }
 .main-section .main-container .filter-container .filter-box {
   background-color: var(--30-color);
   text-align: center;
 }
-.main-section .main-container .filter-container .filter-box .filter-title {
-  text-align: left;
+.main-section .main-container .filter-container .filter-box div .filter-title {
+  padding-top: 1em;
+  text-align: center;
+  color: var(--10-color);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.main-section .main-container .filter-container .filter-box .meal-div {
+  display: flex;
+  flex-direction: column;
+}
+.main-section .main-container .filter-container .filter-box .meal-div .meal-filter-btn {
+  border: none;
+  background-color: var(--30-color);
+  transition: ease-in 0.3s;
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+}
+.main-section .main-container .filter-container .filter-box .meal-div .meal-filter-btn:hover {
+  background-color: var(--10-color);
+  color: var(--30-color);
+}
+.main-section .main-container .filter-container .filter-box .area-div {
+  display: flex;
+  flex-direction: column;
+  transition: ease-in 0.3s;
+  text-transform: capitalize;
+}
+.main-section .main-container .filter-container .filter-box .area-div .area-filter-btn {
+  border: none;
+  background-color: var(--30-color);
+  transition: ease-in 0.3s;
+  text-transform: capitalize;
+  margin-bottom: 0.5em;
+}
+.main-section .main-container .filter-container .filter-box .area-div .area-filter-btn:hover {
+  background-color: var(--10-color);
+  color: var(--30-color);
 }
 .main-section .main-container .filter-container .filter-btn {
   width: 100%;
   border: none;
   background-color: var(--10-color);
-  font-size: 1.3em;
+  font-size: 1.5em;
   color: var(--30-color);
+  font-weight: 600;
+  transition: ease-in 0.3s;
 }
 .main-section .main-container .filter-container .filter-btn i {
   color: var(--30-color);
+  margin-left: 0.3em;
 }
 .main-section .main-container .result-container {
   display: flex;
@@ -91,9 +131,26 @@ body {
 }
 .main-section .main-container .result-container .title-recipes h3 {
   color: var(--10-color);
+  font-weight: 600;
 }
 .main-section .main-container .result-container .recipes .meal-card {
-  border: var(--10-color) solid 1px;
+  background-color: var(--30-color);
+  height: inherit;
+}
+.main-section .main-container .result-container .recipes .meal-card .meal-name {
+  color: var(--dark-color);
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+.main-section .main-container .result-container .recipes .meal-card .recipe-btn {
+  background-color: var(--10-color);
+  border: none;
+  color: var(--30-color);
+  font-weight: 400;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.4em 0.5em;
 }
 .main-section .main-container .result-container .load-more button {
   font-size: 1.5em;
@@ -102,13 +159,14 @@ body {
   border: none;
   cursor: pointer;
   padding: 0.5em 1em;
-  border-radius: 0.5em;
+  border-radius: 1em;
 }
 .main-section .main-container .result-container .goBack a {
   border: none;
   background: transparent;
   color: var(--10-color);
   cursor: pointer;
+  text-decoration: none;
 }
 .main-section .main-container .result-container .goBack i {
   color: var(--10-color);
