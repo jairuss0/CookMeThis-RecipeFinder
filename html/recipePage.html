@@ -10,7 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/navigation.css">
     <link rel="stylesheet" href="../styles/recipepageStyle.css">
-    <script type="module" src="/js/findRecipe.js"></script>
+    <script type ="module" src="/js/findRecipe.js"></script>
 </head>
 
 <body>
@@ -40,10 +40,10 @@
         <div class="main-container container-md mt-4">
             <div class="row">
                 <!----Filters-->
-                <div class="filter-container col-md-3 position-sticky">
+                <div class="filter-container col-md-3">
                     <!----Filter collpse-->
-                    <button class="filter-btn" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse">
-                        FILTER <i class="fa-solid fa-arrow-up arrow"></i>
+                    <button class="filter-btn" id="filter-btn" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse">
+                        FILTER <i class="fa-solid fa-arrow-up"id="arrow"></i>
                     </button>
                     
                     <div class="filter-box collapse show" id="filterCollapse">
@@ -52,20 +52,14 @@
                         </div>
                         
                         <div class="meal-div" id="meal">
-                            <button class="meal-filter-btn">Beef</button>
-                            <button class="meal-filter-btn">Beef</button>
-                            <button class="meal-filter-btn">Beef</button>
-                            <button class="meal-filter-btn">Beef</button>
+                            
                         </div>
                         <div>
                             <p class="filter-title">Area</p>
                         </div>
                         
                         <div class="collapse show area-div" id="area">
-                            <button class="area-filter-btn">Beef</button>
-                            <button class="area-filter-btn">Beef</button>
-                            <button class="area-filter-btn">Beef</button>
-                            <button class="area-filter-btn">Beef</button>
+                           
                         </div>
                     </div>
 
@@ -78,17 +72,7 @@
                     <!---RECIPE RESULT-->
                     <div class="recipes">
                         <div class="row g-1 recipes-result">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card meal-card" style="width: 100%; min-height: 100%;">
-                                    <img src="/assets/sample image.jpg" class="card-img-top" id="meal-img" alt="meal">
-                                    <div class="card-body">
-                                        <p class="meal-name">Some quick example text to build on the card title and
-                                            make
-                                            up the bulk of the card's content.</p>
-                                        <button class="recipe-btn">See Recipe</button>    
-                                    </div>
-                                </div>
-                            </div>
+                            
                             
                         </div>
                     </div>
@@ -105,10 +89,12 @@
     </section>
     <!----FOOTER-->
    
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+  
+    
 </body>
 
 </html>
