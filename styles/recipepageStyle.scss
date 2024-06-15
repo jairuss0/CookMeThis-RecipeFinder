@@ -66,11 +66,11 @@ body {
 .main-section {
     .main-container {
         .filter-container {
-            height: inherit;
-            margin-bottom: 1em;
+            margin-bottom: 1.5em;
             .filter-box {
                 background-color: var(--30-color);
                 text-align: left;
+                
                 div {
                     .filter-title {
                         padding-left: 0.1em;
@@ -99,31 +99,31 @@ body {
                         }
                     }
                     
-                    .filter-btn-clicked-meal{
-                        background-color: var(--10-bg-color);
-                    }
+                    
                 }
                 
                 .area-div {
                     text-transform: capitalize;
-                    .area-filter-btn {
-                        margin: 0.5em 0.3em;
-                        border: none;
-                        background-color: var(--10-color);
-                        transition: ease-in 0.1s;
-                        text-transform: capitalize;
-                        margin-bottom: 0.5em;
-                        color: var(--30-color);
-                        padding: 0.3em 0.5em;
-                        border-radius: 1em;
-                        &:hover {
-                            background-color: var(--10-bg-color);
-                        }
-                        
-                    }
-                    .filter-btn-clicked-area{
+                    
+                    
+                }
+                .filter-buttons {
+                    margin: 0.5em 0.3em;
+                    border: none;
+                    background-color: var(--10-color);
+                    transition: ease-in 0.1s;
+                    text-transform: capitalize;
+                    margin-bottom: 0.5em;
+                    color: var(--30-color);
+                    padding: 0.3em 0.5em;
+                    border-radius: 1em;
+                    &:hover {
                         background-color: var(--10-bg-color);
                     }
+                    
+                }
+                .filter-btn-clicked{
+                    background-color: var(--10-bg-color);
                 }
             }
             
@@ -142,9 +142,9 @@ body {
             }
         }
         .result-container {
+            
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             gap: 2em;
             padding: 1em 1em;
@@ -156,6 +156,17 @@ body {
                 }
             }
             .recipes {
+
+                .meal-container{
+                    display: none;
+                }
+                // set only the first 6 items to display as block
+                .meal-container:nth-child(1),.meal-container:nth-child(2),
+                .meal-container:nth-child(3),.meal-container:nth-child(4),
+                .meal-container:nth-child(5),.meal-container:nth-child(6){
+                    display: block;
+                }
+                
                 .meal-card {
                     background-color: var(--30-color);
                     height: inherit;
@@ -174,7 +185,7 @@ body {
                         font-weight: 400;
                         border-radius: 0.5em;
                         font-size: 1em;
-                        padding: 0.4em 0.5em;
+                        padding: 0.2em 0.4em;
 
                         &:hover{
                             background-color: var(--10-bg-color);

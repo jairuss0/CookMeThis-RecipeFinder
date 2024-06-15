@@ -6,23 +6,24 @@ const areaBtns = document.querySelector(".area-div");
 
 const loadMoreDiv = document.querySelector(".load-more");
 const goBackDiv = document.querySelector(".goBack");
+const loadMoreBtn = document.querySelector(".load-btn");
 
 const recipesParentDiv = document.querySelector(".recipes-result");
 const loadingAnimation = document.querySelector(".loader");
 const loadingText = document.querySelector(".text-result");
 
-document.addEventListener("DOMContentLoaded", async () => {
+window.onload = (() =>{
   // load initial meals
   //initialMeal();
   // load all the filter buttons
   initialLoadingAnimation();
   getResponseByMealList(); 
   getResponseByAreaList();
-  
 });
 
-// create initial meal response
-async function initialMeal() {
+
+// create initial meal 
+async function initialLoadRecipe() {
   try {
     const ingredientResponse = await fetchApiResponseByIngredient("egg");
     renderMeals(ingredientResponse);
@@ -115,7 +116,6 @@ async function getResponseByAreaList() {
     console.error(error);
   }
 }
-
 async function getResponseByArea(area){
   try{
     const responseAreaMeals = await fetchApiReponsebyArea(area);
@@ -167,7 +167,7 @@ function renderMealBtns(response){
   console.log(response);
   response.meals.forEach((meal) => {
     const buttons = document.createElement('button');
-    buttons.classList.add("meal-filter-btn","filter-buttons");
+    buttons.classList.add("filter-buttons");
     buttons.textContent = meal.strCategory;
     mealBtns.appendChild(buttons);
     buttons.setAttribute("id", meal.strCategory);
@@ -177,21 +177,20 @@ function renderMealBtns(response){
       console.log(buttons.id);
       let mealCategory = buttons.id;
       getResponseByMealCategory(mealCategory);
-      removeActiveButtons(allButtons,"meal");
-      removeActiveButtons(allButtons,"area");
-      buttons.classList.add('filter-btn-clicked-meal');
+      removeActiveButtons(allButtons);
+      buttons.classList.add('filter-btn-clicked');
     });
-    
+   
 
   });
-  
+  allButtons = document.querySelectorAll(".filter-buttons");
 }
 // render area category buttons
 function renderAreaBtns(response){
   console.log(response);
   response.meals.forEach((meal) => {
     const buttons = document.createElement('button');
-    buttons.classList.add("area-filter-btn","filter-buttons");
+    buttons.classList.add("filter-buttons");
     buttons.textContent = meal.strArea;
     areaBtns.appendChild(buttons);
     buttons.setAttribute("id", meal.strArea);
@@ -200,33 +199,55 @@ function renderAreaBtns(response){
       console.log(buttons.id);
       let area = buttons.id;
       getResponseByArea(area);
-      removeActiveButtons(allButtons,"area");
-      removeActiveButtons(allButtons,"meal");
-      buttons.classList.add('filter-btn-clicked-area');
+      removeActiveButtons(allButtons);
+      buttons.classList.add('filter-btn-clicked');
     });
   });
   allButtons = document.querySelectorAll(".filter-buttons");
 }
 
+let mealContainer;
 // render meals via response 
 function renderMeals(response) {
   console.log(response);
   let recipeCard = "";
+
   if (response) {
     response.meals.forEach((meal) => {
-      recipeCard += `<div class="col-lg-4 col-md-6">
+      recipeCard += `<div class="col-lg-4 col-md-6 meal-container">
                                 <div class="card meal-card " style="min-width: 100%;">
                                     <img src="${meal.strMealThumb}" class="card-img-top" id="meal-img" alt="meal">
                                     <div class="card-body">
                                         <p class="meal-name">${meal.strMeal}</p>
-                                        <button class="recipe-btn">See Recipe</button>    
+                                        <button class="recipe-btn" onclick=renderMeal(${meal.idMeal})>See Recipe</button>    
                                     </div>
                                 </div>
                             </div>`;
     });
     recipesParentDiv.innerHTML = recipeCard;
   }
+  mealContainer = document.querySelectorAll('.meal-container');
 }
+
+// render onlicked meal
+function renderMeal(mealId){
+  console.log(mealId);
+}
+
+// load more functionality
+let currentRecipes = 6;
+loadMoreBtn.addEventListener('click',()=>{
+  console.log(mealContainer);
+  for(let i = currentRecipes; i < currentRecipes + 3; i++){
+      if(mealContainer[i]){
+        mealContainer[i].style.display = 'block';
+      }
+  }
+  currentRecipes += 3;
+  if(currentRecipes >= mealContainer.length){
+    loadMoreDiv.style.visibility = "hidden";
+  }
+});
 
 // if user keyup pressed an enter
 document.onkeyup = (e) => {
@@ -239,9 +260,9 @@ document.onkeyup = (e) => {
 
 
 // remove active buttons
-function removeActiveButtons(buttons,type){
+function removeActiveButtons(buttons){
   buttons.forEach((btn) =>{
-    btn.classList.remove("filter-btn-clicked-"+type);
+    btn.classList.remove("filter-btn-clicked");
   });
   
 
@@ -253,30 +274,25 @@ function hideAnimation(){
   goBackDiv.style.visibility = "visible";
   loadMoreDiv.style.visibility = "visible";
 }
-
+// hide animation
 function showAnimation(){
   loadingAnimation.style.display = "flex";
   goBackDiv.style.visibility = "hidden";
   loadMoreDiv.style.visibility = "hidden";
 }
-
+// initally load animation
 function initialLoadingAnimation(){
   loadingAnimation.style.display = "flex";
   goBackDiv.style.visibility = "hidden";
   loadMoreDiv.style.visibility = "hidden";
 }
 
-
+// display result loading message
 function displayLoadingMessage(message){
   loadingText.textContent = message;
 }
 
-/*
-filterBtn.addEventListener('click', () => {
-  
-});
 
-*/
 /*
 
   Major
