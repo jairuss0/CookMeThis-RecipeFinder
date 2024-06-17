@@ -12,15 +12,13 @@ const recipesParentDiv = document.querySelector(".recipes-result");
 const loadingAnimation = document.querySelector(".loader");
 const loadingText = document.querySelector(".text-result");
 
-window.onload = (() =>{
-  // load initial meals
-  //initialMeal();
-  // load all the filter buttons
+const recipeBtn = document.querySelector(".recipe-btn");
+
+document.addEventListener('DOMContentLoaded', ()=>{
   initialLoadingAnimation();
   getResponseByMealList(); 
   getResponseByAreaList();
-});
-
+})
 
 // create initial meal 
 async function initialLoadRecipe() {
@@ -43,10 +41,12 @@ async function fetchApiResponseByIngredient(ingredient) {
     if (!response.ok) {
       console.log("Error: response Failed");
     }
-    hideAnimation();
     return await response.json();
   } catch (error) {
     console.error(error);
+  }
+  finally{
+    hideAnimation();
   }
 }
 // get the response
@@ -59,9 +59,11 @@ async function getResponseByIngredient() {
       recipeInput.value = "";
       renderMeals(responseIngredient);
     } catch (error) {
-      console.error(error);
+      displayLoadingMessage("No recipe found!");
+      showAnimation();
       // create a function to render error on webpage
     }
+   
   }
 }
 
@@ -215,11 +217,11 @@ function renderMeals(response) {
   if (response) {
     response.meals.forEach((meal) => {
       recipeCard += `<div class="col-lg-4 col-md-6 meal-container">
-                                <div class="card meal-card " style="min-width: 100%;">
+                                <div class="card meal-card " >
                                     <img src="${meal.strMealThumb}" class="card-img-top" id="meal-img" alt="meal">
                                     <div class="card-body">
                                         <p class="meal-name">${meal.strMeal}</p>
-                                        <button class="recipe-btn" onclick=renderMeal(${meal.idMeal})>See Recipe</button>    
+                                        <a href='recipe-item.html' id="${meal.idMeal}" class="recipe-btn">See Recipe</a>
                                     </div>
                                 </div>
                             </div>`;
@@ -254,7 +256,6 @@ document.onkeyup = (e) => {
   if (e.key == "Enter" && recipeInput.value.length != 0) {
     e.preventDefault();
     getResponseByIngredient();
-    
   }
 };
 
@@ -291,6 +292,7 @@ function initialLoadingAnimation(){
 function displayLoadingMessage(message){
   loadingText.textContent = message;
 }
+
 
 
 /*

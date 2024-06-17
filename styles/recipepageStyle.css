@@ -144,7 +144,7 @@ body {
 }
 .main-section .main-container .result-container .recipes .meal-card {
   background-color: var(--30-color);
-  height: inherit;
+  min-height: 100%;
 }
 .main-section .main-container .result-container .recipes .meal-card .meal-name {
   color: var(--dark-color);
@@ -160,6 +160,7 @@ body {
   border-radius: 0.5em;
   font-size: 1em;
   padding: 0.2em 0.4em;
+  text-decoration: none;
 }
 .main-section .main-container .result-container .recipes .meal-card .recipe-btn:hover {
   background-color: var(--10-bg-color);
@@ -174,7 +175,7 @@ body {
 .main-section .main-container .result-container .recipes .loader .text-result {
   color: var(--10-bg-color);
   margin-top: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 .main-section .main-container .result-container .recipes .panWrapper {
   width: 200px;
@@ -290,4 +291,77 @@ body {
 }
 .main-section .main-container .result-container .goBack a:hover {
   color: var(--10-bg-color);
+}
+.main-section .main-container .recipe-container {
+  background-color: var(--30-color);
+}
+.main-section .main-container .recipe-container .hero-recipe-section {
+  margin: 0 auto;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-img-container {
+  position: relative;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-img-container .meal-img {
+  min-width: 100%;
+  border-radius: 1em;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0.5em;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .meal-category {
+  color: var(--10-bg-color);
+  font-size: 1.1em;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .meal-name {
+  color: var(--10-color);
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .meal-area {
+  color: var(--10-bg-color);
+  text-transform: capitalize;
+  margin-top: 0;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .yt-link {
+  background-color: var(--10-color);
+  font-size: 1.1em;
+  color: var(--30-color);
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  border-radius: 1em;
+  text-transform: capitalize;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .yt-link:hover {
+  background-color: var(--10-bg-color);
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .add-fav-btn {
+  border: none;
+  background-color: var(--10-color);
+  font-size: 1.1em;
+  color: var(--30-color);
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  border-radius: 1em;
+  text-transform: capitalize;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .add-fav-btn:hover {
+  background-color: var(--10-bg-color);
+}
+.main-section .main-container .recipe-container .content-section {
+  padding: 0.2em 1em;
+  margin-top: 1.5em;
 }/*# sourceMappingURL=recipepageStyle.css.map */
