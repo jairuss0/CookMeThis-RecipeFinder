@@ -221,7 +221,7 @@ function renderMeals(response) {
                                     <img src="${meal.strMealThumb}" class="card-img-top" id="meal-img" alt="meal">
                                     <div class="card-body">
                                         <p class="meal-name">${meal.strMeal}</p>
-                                        <a href='recipe-item.html' id="${meal.idMeal}" class="recipe-btn">See Recipe</a>
+                                        <a href='recipe-item.html?id=${meal.idMeal}' id="${meal.idMeal}" class="recipe-btn">See Recipe</a>
                                     </div>
                                 </div>
                             </div>`;
@@ -231,10 +231,7 @@ function renderMeals(response) {
   mealContainer = document.querySelectorAll('.meal-container');
 }
 
-// render onlicked meal
-function renderMeal(mealId){
-  console.log(mealId);
-}
+
 
 // load more functionality
 let currentRecipes = 6;

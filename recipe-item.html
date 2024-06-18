@@ -20,39 +20,49 @@
     </nav>
     <!-----RESULT SECTION-->
     <section class="main-section">
-        <div class="main-container container-md mt-4">
+        <div class="main-container container">
             <!---results-->
             <div class="recipe-container">
-                <!---RECIPE MEAL RESULT-->
-                <div class="hero-recipe-section row g-4">
-                    <div class="meal-img-container col-md-7">
-                        <img src="https://www.themealdb.com/images/media/meals/kvbotn1581012881.jpg" class="meal-img"  alt="">
+                <!---LOADING ANIMATION-->
+                <div class="loader">
+                    <div class="panWrapper">
+                        <div class="pan">
+                            <div class="food"></div>
+                            <div class="panBase"></div>
+                            <div class="panHandle"></div>
+                        </div>
+                        <div class="panShadow"></div>
                     </div>
-                    <div class="meal-description col">
+                    <p class="text-result">Loading Recipe...</p>
+                </div>
+                <!---RECIPE MEAL RESULT-->
+                <div class="hero-recipe-section row ">
+                    <div class="meal-img-container col-lg-6">
+                        <img src="https://www.themealdb.com/images/media/meals/kvbotn1581012881.jpg" class="meal-img"
+                            alt="">
+                    </div>
+                    <div class="meal-description col-lg-6">
                         <p class="meal-category">Category</p>
                         <p class="meal-name">Hotdog Nigga</p>
-                        <p class="meal-area">Filipino</p>
+                        <p class="meal-area">Area</p>
                         <div class="buttons">
-                            <a href="" class="yt-link" target="_blank">watch video tutorial</a>
-                            <button class="add-fav-btn">Add to favourites</button>
+                            <button class="add-fav-btn"><i class="fa-solid fa-plus"></i> Add to favourites</button>
+                            <a href="" class="yt-link" target="_blank"><i class="fa-brands fa-youtube"></i> Watch Video
+                                Tutorial </a>
                         </div>
                     </div>
                 </div>
                 <div class="content-section row g-4">
                     <div class="instruction-container col-md-7">
-                        <p class="instructions">Instructions</p>
-                        <p class="instruction-list"></p>
-                        <ul class="ingredients-list">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <h6 class="instructions"><i class="fa-solid fa-utensils"></i> Instructions:</h6>
+                        <div class="instructions-list">
+
+                        </div>
                     </div>
                     <div class="meal-ingredient-container col">
                         <div class="ingredients-div">
-                            <p class="ingredients">Ingredients</p>
+
+                            <h6 class="ingredients"><i class="fa-solid fa-utensils"></i> Ingredients:</h6>
                             <ul class="ingredients-list">
                                 <li></li>
                                 <li></li>
@@ -62,7 +72,7 @@
                             </ul>
                         </div>
                         <div class="measure-div">
-                            <p class="measurements">Measurements</p>
+                            <h6 class="measurements"><i class="fa-solid fa-utensils"></i> Measurements:</h6>
                             <ul class="measurement-list">
                                 <li></li>
                                 <li></li>
@@ -82,8 +92,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-    
-
+    <script src="./js/recipeItem.js"></script>
 </body>
 
 </html>
