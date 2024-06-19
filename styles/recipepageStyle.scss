@@ -514,52 +514,56 @@ body {
                 }
             }
             .content-section{
-                padding: .5em 1em;
-                margin-top: 1.5em;
-
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4em;
+                padding: 1em .5em;
                 .instruction-container{
+                    .div{
+                        border-bottom: var(--10-color) 1.1px solid;
+                        width: 210px;
+                        margin-bottom: 1em;
+                    }
                     .instructions{
-                        
                         font-size: 1.5em;
                         text-align: left;
                         color: var(--10-color);
-
+                        
                         i{
                             margin-right: .2em;
+                            font-size: 1.3em;
                         }
                         
+                    }
+                    .instructions-list{
+                        color: var(--10-bg-color);
                     }
                 }
                 .meal-ingredient-container{
                     .ingredients-div{
-                        margin-bottom: 2em;
+                        
+                        .div{
+                            border-bottom: var(--10-color) 1.1px solid;
+                            width: 200px;
+                            margin-bottom: 1em;
+                        }
                         .ingredients{
                             font-size: 1.5em;
                             text-align: left;
                             color: var(--10-color);
-    
                             i{
                                 margin-right: .2em;
                             }
                         }
                         .ingredients-list{
-
-                        }
-                    }
-                    .measure-div{
-                        .measurements{
-                            font-size: 1.5em;
-                            text-align: left;
-                            color: var(--10-color);
-    
-                            i{
-                                margin-right: .2em;
+                            li{
+                                color: var(--10-bg-color);
+                                margin: .7em 0em;
                             }
                         }
-                        .measurement-list{
-                            
-                        }
                     }
+                    
                 }
             }
         }

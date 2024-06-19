@@ -471,8 +471,16 @@ body {
   background-color: var(--10-bg-color);
 }
 .main-section .main-container .recipe-container .content-section {
-  padding: 0.5em 1em;
-  margin-top: 1.5em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4em;
+  padding: 1em 0.5em;
+}
+.main-section .main-container .recipe-container .content-section .instruction-container .div {
+  border-bottom: var(--10-color) 1.1px solid;
+  width: 210px;
+  margin-bottom: 1em;
 }
 .main-section .main-container .recipe-container .content-section .instruction-container .instructions {
   font-size: 1.5em;
@@ -481,9 +489,15 @@ body {
 }
 .main-section .main-container .recipe-container .content-section .instruction-container .instructions i {
   margin-right: 0.2em;
+  font-size: 1.3em;
 }
-.main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div {
-  margin-bottom: 2em;
+.main-section .main-container .recipe-container .content-section .instruction-container .instructions-list {
+  color: var(--10-bg-color);
+}
+.main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div .div {
+  border-bottom: var(--10-color) 1.1px solid;
+  width: 200px;
+  margin-bottom: 1em;
 }
 .main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div .ingredients {
   font-size: 1.5em;
@@ -493,11 +507,7 @@ body {
 .main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div .ingredients i {
   margin-right: 0.2em;
 }
-.main-section .main-container .recipe-container .content-section .meal-ingredient-container .measure-div .measurements {
-  font-size: 1.5em;
-  text-align: left;
-  color: var(--10-color);
-}
-.main-section .main-container .recipe-container .content-section .meal-ingredient-container .measure-div .measurements i {
-  margin-right: 0.2em;
+.main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div .ingredients-list li {
+  color: var(--10-bg-color);
+  margin: 0.7em 0em;
 }/*# sourceMappingURL=recipepageStyle.css.map */
