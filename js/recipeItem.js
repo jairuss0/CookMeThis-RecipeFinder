@@ -1,4 +1,4 @@
-// get the url query parameter id
+
 const loadingAnimation = document.querySelector(".loader");
 const heroSection = document.querySelector(".hero-recipe-section");
 const contentSection = document.querySelector(".content-section");
@@ -14,7 +14,7 @@ const mealYtLink = document.querySelector(".yt-link");
 const instructions = document.querySelector(".instructions-list");
 const ingredients = document.querySelector(".ingredients-list");
 const measurements = document.querySelector(".measurement-list");
-
+// get the url query parameter id
 const params = new URLSearchParams(window.location.search);
 const recipeId = params.get("id");
 console.log(recipeId);
