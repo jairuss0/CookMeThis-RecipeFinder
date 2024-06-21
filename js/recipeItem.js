@@ -14,6 +14,10 @@ const mealYtLink = document.querySelector(".yt-link");
 const instructions = document.querySelector(".instructions-list");
 const ingredients = document.querySelector(".ingredients-list");
 const measurements = document.querySelector(".measurement-list");
+
+const errorMessage = document.querySelector(".error-container");
+const recipeContainer = document.querySelector(".recipe-container");
+
 // get the url query parameter id
 const params = new URLSearchParams(window.location.search);
 const recipeId = params.get("id");
@@ -31,6 +35,10 @@ async function loadRecipeItem() {
     } catch (error) {
       console.error(error);
     }
+  }
+  else{
+    errorMessage.style.display = "block";
+    recipeContainer.style.display = "none";
   }
 }
 
@@ -57,6 +65,7 @@ function renderRecipe(response) {
   console.log(response.meals[0].strInstructions);
 
   let instructionsText =  response.meals[0].strInstructions.split('\n');
+  console.log(instructionsText);
   mealArea.textContent = response.meals[0].strArea;
   mealCategory.textContent = response.meals[0].strCategory;
   mealName.textContent = response.meals[0].strMeal;

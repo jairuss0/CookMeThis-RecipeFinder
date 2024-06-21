@@ -14,21 +14,13 @@ const loadingText = document.querySelector(".text-result");
 
 const recipeBtn = document.querySelector(".recipe-btn");
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () =>{
   initialLoadingAnimation();
   getResponseByMealList(); 
   getResponseByAreaList();
+  
 })
 
-// create initial meal 
-async function initialLoadRecipe() {
-  try {
-    const ingredientResponse = await fetchApiResponseByIngredient("egg");
-    renderMeals(ingredientResponse);
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 // fetch reponse via main ingredient
 async function fetchApiResponseByIngredient(ingredient) {
@@ -49,6 +41,7 @@ async function fetchApiResponseByIngredient(ingredient) {
     hideAnimation();
   }
 }
+
 // get the response
 async function getResponseByIngredient() {
   const ingredientInput = recipeInput.value.toLowerCase();
@@ -58,6 +51,8 @@ async function getResponseByIngredient() {
       // pass the response onto the render function
       recipeInput.value = "";
       renderMeals(responseIngredient);
+      console.log(responseIngredient.meals.length);
+      checkMealLength(responseIngredient.meals.length);
     } catch (error) {
       displayLoadingMessage("No recipe found!");
       showAnimation();
@@ -122,6 +117,8 @@ async function getResponseByArea(area){
   try{
     const responseAreaMeals = await fetchApiReponsebyArea(area);
     renderMeals(responseAreaMeals);
+    console.log(responseAreaMeals.meals.length);
+    checkMealLength(responseAreaMeals.meals.length);
   }catch(error){
     console.error(error);
   }
@@ -134,16 +131,20 @@ async function fetchApiReponsebyArea(area){
     if(!response.ok){
       console.log("Error: response Failed");
     }
-    hideAnimation();
+    
     return await response.json();
   }catch(error){
     console.error(error);
+  }finally{
+    hideAnimation();
   }
 }
 async function getResponseByMealCategory(mealCategory){
   try{
-    const responseAreaMeals = await fetchApiReponsebyMealCategory(mealCategory);
-    renderMeals(responseAreaMeals);
+    const responseByMeals = await fetchApiReponsebyMealCategory(mealCategory);
+    renderMeals(responseByMeals);
+    console.log(responseByMeals.meals.length);
+    checkMealLength(responseByMeals.meals.length);
   }catch(error){
     console.error(error);
   }
@@ -155,10 +156,12 @@ async function fetchApiReponsebyMealCategory(mealCategory){
     if(!response.ok){
       console.log("Error: response Failed");
     }
-    hideAnimation();
+   
     return await response.json();
   }catch(error){
     console.error(error);
+  }finally{
+    hideAnimation();
   }
 }
 
@@ -235,7 +238,8 @@ function renderMeals(response) {
 
 // load more functionality
 let currentRecipes = 6;
-loadMoreBtn.addEventListener('click',()=>{
+
+loadMoreBtn.addEventListener('click',() => {
   console.log(mealContainer);
   for(let i = currentRecipes; i < currentRecipes + 3; i++){
       if(mealContainer[i]){
@@ -245,8 +249,20 @@ loadMoreBtn.addEventListener('click',()=>{
   currentRecipes += 3;
   if(currentRecipes >= mealContainer.length){
     loadMoreDiv.style.visibility = "hidden";
+    
   }
+  
 });
+
+function checkMealLength(mealLength){
+  if(mealLength <= 6){
+    loadMoreDiv.style.visibility = "hidden";
+    goBackDiv.style.visibility = "hidden";
+  }
+}
+
+
+
 
 // if user keyup pressed an enter
 document.onkeyup = (e) => {
@@ -262,8 +278,6 @@ function removeActiveButtons(buttons){
   buttons.forEach((btn) =>{
     btn.classList.remove("filter-btn-clicked");
   });
-  
-
 }
 
 // hide loading animation

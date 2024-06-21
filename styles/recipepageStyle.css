@@ -510,4 +510,31 @@ body {
 .main-section .main-container .recipe-container .content-section .meal-ingredient-container .ingredients-div .ingredients-list li {
   color: var(--10-bg-color);
   margin: 0.7em 0em;
+}
+.main-section .main-container .error-container {
+  width: 100%;
+  min-height: 50vh;
+  align-content: center;
+  display: none;
+}
+.main-section .main-container .error-container h2 {
+  font-size: 3em;
+  text-align: center;
+  color: var(--10-color);
+  font-weight: 500;
+  margin: 1em;
+}
+.main-section .main-container .error-container div {
+  width: 100%;
+  text-align: center;
+}
+.main-section .main-container .error-container a {
+  text-decoration: none;
+  color: var(--30-color);
+  background-color: var(--10-bg-color);
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+}
+.main-section .main-container .error-container a:hover {
+  background-color: var(--10-color);
 }/*# sourceMappingURL=recipepageStyle.css.map */

@@ -333,6 +333,7 @@ body {
 
             
         }
+        
         .recipe-container{
             background-color: var(--30-color);
             .loader {
@@ -566,6 +567,36 @@ body {
                     
                 }
             }
+        }
+        .error-container{
+            width: 100%;
+            min-height: 50vh;
+            align-content: center;
+            display: none;
+            
+
+            h2{
+                font-size: 3em;
+                text-align: center;
+                color: var(--10-color);
+                font-weight: 500;
+                margin: 1em;
+            }
+            div{
+                width: 100%;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+                color: var(--30-color);
+                background-color: var(--10-bg-color);
+                font-size: 1.2em;
+                padding: .5em 1em;
+                &:hover{
+                    background-color: var(--10-color);
+                }
+            }
+            
         }
     }
 }
