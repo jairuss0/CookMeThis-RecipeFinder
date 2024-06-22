@@ -29,6 +29,7 @@ body {
   min-height: 50vh;
   align-content: center;
   border-radius: 1em;
+  padding: 0em 3em;
 }
 .search-container .search-box .title {
   text-align: center;
@@ -302,7 +303,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  height: 380px;
+  min-height: 100vh;
   flex-direction: column;
 }
 .main-section .main-container .recipe-container .loader .text-result {

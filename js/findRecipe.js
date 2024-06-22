@@ -247,6 +247,7 @@ loadMoreBtn.addEventListener('click',() => {
       }
   }
   currentRecipes += 3;
+
   if(currentRecipes >= mealContainer.length){
     loadMoreDiv.style.visibility = "hidden";
     
@@ -254,6 +255,7 @@ loadMoreBtn.addEventListener('click',() => {
   
 });
 
+// remove the load more button if the result is less than recipe per page
 function checkMealLength(mealLength){
   if(mealLength <= 6){
     loadMoreDiv.style.visibility = "hidden";
