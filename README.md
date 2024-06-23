@@ -1,1 +1,1 @@
-# CookMeThis
+# CookMeThis: Recipe finder website
