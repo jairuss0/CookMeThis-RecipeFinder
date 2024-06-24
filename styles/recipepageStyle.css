@@ -21,6 +21,33 @@ body {
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
+nav {
+  background-color: var(--30-color);
+  margin: 0 auto;
+  padding: 1.5em;
+}
+nav .nav-container {
+  display: flex;
+  gap: 1em;
+  justify-content: space-evenly;
+}
+nav .nav-container .nav-logo h5 {
+  font-weight: bolder;
+  color: var(--10-color);
+  font-size: 1.5em;
+}
+nav .nav-container .nav-link {
+  display: flex;
+  gap: 1em;
+}
+nav .nav-container a {
+  text-decoration: none;
+  color: var(--10-color);
+}
+nav .nav-container a:active {
+  color: var(--10-bg-color);
+}
+
 .search-section {
   background-color: var(--30-color);
 }
@@ -471,6 +498,12 @@ body {
 .main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .add-fav-btn:hover {
   background-color: var(--10-bg-color);
 }
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .added-fav-btn {
+  background-color: var(--10-bg-color);
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .added-fav-btn:hover {
+  background-color: var(--10-color);
+}
 .main-section .main-container .recipe-container .content-section {
   margin: 0 auto;
   display: flex;
@@ -538,4 +571,42 @@ body {
 }
 .main-section .main-container .error-container a:hover {
   background-color: var(--10-color);
+}
+
+.fav-section {
+  background-color: var(--30-color);
+  min-height: 100vh;
+}
+.fav-section .fav-main-container .fav-recipes-title {
+  text-align: center;
+  padding: 1.5em;
+}
+.fav-section .fav-main-container .fav-recipes-title #fav-text {
+  color: var(--10-bg-color);
+}
+.fav-section .fav-main-container .row .fav-container {
+  padding: 0.5em 1em;
+}
+.fav-section .fav-main-container .row .fav-container .fav-recipes-result .meal-container .meal-card {
+  background-color: var(--30-color);
+  min-height: 100%;
+}
+.fav-section .fav-main-container .row .fav-container .fav-recipes-result .meal-container .meal-card .meal-name {
+  color: var(--dark-color);
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+.fav-section .fav-main-container .row .fav-container .fav-recipes-result .meal-container .meal-card .recipe-btn {
+  background-color: var(--10-color);
+  border: none;
+  color: var(--30-color);
+  font-weight: 400;
+  border-radius: 0.5em;
+  font-size: 1em;
+  padding: 0.2em 0.4em;
+  text-decoration: none;
+}
+.fav-section .fav-main-container .row .fav-container .fav-recipes-result .meal-container .meal-card .recipe-btn:hover {
+  background-color: var(--10-bg-color);
 }/*# sourceMappingURL=recipepageStyle.css.map */

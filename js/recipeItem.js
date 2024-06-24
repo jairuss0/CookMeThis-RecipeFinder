@@ -17,15 +17,69 @@ const measurements = document.querySelector(".measurement-list");
 
 const errorMessage = document.querySelector(".error-container");
 const recipeContainer = document.querySelector(".recipe-container");
+const recipeCount = document.getElementById("favourites-count");
 
 // get the url query parameter id
 const params = new URLSearchParams(window.location.search);
 const recipeId = params.get("id");
 console.log(recipeId);
 
+// create array for recipe items ogf favourites
+// recipe id, recipe name,  recipe thumbnail
+let recipeItems = [];
+
 document.addEventListener("DOMContentLoaded", () => {
   loadRecipeItem();
+  loadLocalStorageRecipeItems();
+  markFavButton();
+  countFavRecipe();
+  
 });
+
+addToFavBtn.addEventListener('click', () =>{
+  saveRecipe(recipeId,mealName.textContent,mealImage.src);
+  console.log(recipeItems);
+  markFavButton();
+  countFavRecipe();
+});
+
+
+function countFavRecipe(){
+  recipeCount.textContent = "("+recipeItems.length+ ")";
+}
+
+
+function markFavButton(){
+  recipeItems.forEach(recipeItem =>{
+    if(recipeItem.id === recipeId){
+      addToFavBtn.classList.add('added-fav-btn');
+      addToFavBtn.innerHTML = '<i class="fa-solid fa-minus"></i> Remove from Favourites';
+    }
+  });
+}
+
+// save item to localstorage
+function saveRecipeLocalStorage(recipeItems){
+  localStorage.setItem('recipe',JSON.stringify(recipeItems));
+} 
+
+// load favourie recipe items
+function loadLocalStorageRecipeItems(){
+  const storedRecipe = localStorage.getItem('recipe');
+  if(storedRecipe){
+    recipeItems = JSON.parse(storedRecipe);
+  }
+}
+
+function saveRecipe(id,name,img){
+  const newRecipe = {
+     id: id,
+     name: name,
+     img: img
+  };
+  recipeItems.push(newRecipe);
+  saveRecipeLocalStorage(recipeItems);
+}
 
 async function loadRecipeItem() {
   if (recipeId) {

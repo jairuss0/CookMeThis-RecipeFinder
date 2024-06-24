@@ -14,20 +14,30 @@
 </head>
 
 <body>
+
     <!---NAVIGATION-->
     <nav>
-
+        <div class="nav-container">
+            <div class="nav-container">
+                <div class="nav-logo"><h5 id="logo"><em>CookMeThis</em></h5></div>
+                <div class="nav-link">
+                    <a href="/recipePage.html" target="_self">Home</a>
+                    <a href="/favourites.html" target="_self">Your favourites <span id="favourites-count">(0)</span></a>
+                </div>
+            </div>
+        </div>
     </nav>
     <!-----RESULT SECTION-->
     <section class="main-section">
         <div class="main-container container">
             <!---results-->
+            
             <div class="error-container">
                 <h2>Page not found! </h2>
                 <div>
                     <a href="/recipePage.html" target="_self">Go Back to Search Page</a>
                 </div>
-                
+
             </div>
             <div class="recipe-container">
                 <!---LOADING ANIMATION-->
@@ -45,17 +55,17 @@
                 <!---RECIPE MEAL RESULT-->
                 <div class="hero-recipe-section row ">
                     <div class="meal-img-container col-lg-6">
-                        <img src="" class="meal-img"
-                            alt="">
+                        <img src="" class="meal-img" alt="">
                     </div>
                     <div class="meal-description col-lg-6">
                         <p class="meal-category"></p>
                         <p class="meal-name"> </p>
                         <p class="meal-area"></p>
-                        <div class="buttons">
+                        <div class="buttons" >
                             <button class="add-fav-btn"><i class="fa-solid fa-plus"></i> Add to favourites</button>
                             <a href="" class="yt-link" target="_blank"><i class="fa-brands fa-youtube"></i> Watch Video
                                 Tutorial </a>
+                            <a href="/recipePage.html" class="yt-link" target="_self"><i class="fa-solid fa-house"></i> Go Home </a>
                         </div>
                     </div>
                 </div>
@@ -73,9 +83,9 @@
                             <div class="div">
                                 <h6 class="ingredients"><i class="fa-solid fa-bowl-food"></i> Ingredients</h6>
                             </div>
-                           
+
                             <ul class="ingredients-list">
-                                
+
                             </ul>
                         </div>
                     </div>

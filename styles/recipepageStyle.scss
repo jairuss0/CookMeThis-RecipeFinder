@@ -22,6 +22,39 @@ body {
     font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
+nav{
+    background-color: var(--30-color);
+    margin: 0 auto;
+    padding: 1.5em;
+    
+    .nav-container{
+        display: flex;
+        gap: 1em;
+        justify-content: space-evenly;
+
+        .nav-logo{
+            h5{
+                font-weight: bolder;
+                color: var(--10-color);
+                font-size: 1.5em;
+
+            }
+        }
+        .nav-link{
+            display: flex;
+            gap: 1em;
+        }
+        a{
+            text-decoration: none;
+            color: var(--10-color);
+
+            &:active{
+                color: var(--10-bg-color);
+            }
+        }
+    }
+}
+
 .search-section {
     background-color: var(--30-color);
 }
@@ -507,6 +540,12 @@ body {
                                 background-color: var(--10-bg-color);
                             }
                         }
+                        .added-fav-btn{
+                            background-color: var(--10-bg-color);
+                            &:hover{
+                                background-color: var(--10-color);
+                            }
+                        }
                     
                     }
                     
@@ -595,6 +634,61 @@ body {
                 }
             }
             
+        }
+    }
+}
+
+.fav-section{
+    background-color: var(--30-color);
+    min-height: 100vh;
+
+    .fav-main-container{
+       
+        .fav-recipes-title{
+            text-align: center;
+            padding: 1.5em;
+            #fav-text{
+                color: var(--10-bg-color);
+            }
+        }
+
+        .row{
+                .fav-container{
+                    padding: .5em 1em;
+
+                    .fav-recipes-result{
+                        .meal-container{
+
+                            .meal-card {
+                                background-color: var(--30-color);
+                                min-height: 100%;
+            
+                                .meal-name {
+                                    color: var(--dark-color);
+                                    font-weight: 700;
+                                    text-transform: capitalize;
+                                    font-size: 1em;
+                                }
+            
+                                .recipe-btn {
+                                    background-color: var(--10-color);
+                                    border: none;
+                                    color: var(--30-color);
+                                    font-weight: 400;
+                                    border-radius: 0.5em;
+                                    font-size: 1em;
+                                    padding: 0.2em 0.4em;
+                                    text-decoration: none;
+                                   
+                                    &:hover{
+                                        background-color: var(--10-bg-color);
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+                }
         }
     }
 }
