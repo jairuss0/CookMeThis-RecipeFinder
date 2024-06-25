@@ -13,14 +13,31 @@ const loadingAnimation = document.querySelector(".loader");
 const loadingText = document.querySelector(".text-result");
 
 const recipeBtn = document.querySelector(".recipe-btn");
+const recipeCount = document.getElementById("favourites-count");
 
 document.addEventListener('DOMContentLoaded', () =>{
   initialLoadingAnimation();
   getResponseByMealList(); 
   getResponseByAreaList();
-  
+  loadLocalStorageRecipeItems();
+  countFavRecipe();
 })
 
+let recipeItems;
+
+function loadLocalStorageRecipeItems(){
+  const storedRecipe = localStorage.getItem('recipe');
+  if(storedRecipe){
+    recipeItems = JSON.parse(storedRecipe);
+  }
+  else{
+     recipeItems = [];
+  }
+}
+
+function countFavRecipe(){
+  recipeCount.textContent = "("+recipeItems.length+")";
+}
 
 // fetch reponse via main ingredient
 async function fetchApiResponseByIngredient(ingredient) {

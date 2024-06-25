@@ -485,6 +485,18 @@ nav .nav-container a:active {
 .main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .yt-link:hover {
   background-color: var(--10-bg-color);
 }
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .link {
+  background-color: var(--10-color);
+  font-size: 1.1em;
+  color: var(--30-color);
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  border-radius: 1em;
+  text-transform: capitalize;
+}
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .link:hover {
+  background-color: var(--10-bg-color);
+}
 .main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .add-fav-btn {
   border: none;
   background-color: var(--10-color);
@@ -498,10 +510,17 @@ nav .nav-container a:active {
 .main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .add-fav-btn:hover {
   background-color: var(--10-bg-color);
 }
-.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .added-fav-btn {
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .remove-fav-btn {
+  border: none;
   background-color: var(--10-bg-color);
+  font-size: 1.1em;
+  color: var(--30-color);
+  text-decoration: none;
+  padding: 0.5em 0.5em;
+  border-radius: 1em;
+  text-transform: capitalize;
 }
-.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .added-fav-btn:hover {
+.main-section .main-container .recipe-container .hero-recipe-section .meal-description .buttons .remove-fav-btn:hover {
   background-color: var(--10-color);
 }
 .main-section .main-container .recipe-container .content-section {

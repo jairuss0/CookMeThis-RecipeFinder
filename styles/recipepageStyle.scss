@@ -527,6 +527,20 @@ nav{
                             }
                             
                         }
+                        .link{
+                            
+                            background-color: var(--10-color);
+                            font-size: 1.1em;
+                            color: var(--30-color);
+                            text-decoration: none;
+                            padding: .5em .5em;
+                            border-radius: 1em;
+                            text-transform: capitalize;
+                            &:hover{
+                                background-color: var(--10-bg-color);
+                            }
+                            
+                        }
                         .add-fav-btn{
                             border: none;
                             background-color: var(--10-color);
@@ -540,8 +554,15 @@ nav{
                                 background-color: var(--10-bg-color);
                             }
                         }
-                        .added-fav-btn{
+                        .remove-fav-btn{
+                            border: none;
                             background-color: var(--10-bg-color);
+                            font-size: 1.1em;
+                            color: var(--30-color);
+                            text-decoration: none;
+                            padding: .5em .5em;
+                            border-radius: 1em;
+                            text-transform: capitalize;
                             &:hover{
                                 background-color: var(--10-color);
                             }
