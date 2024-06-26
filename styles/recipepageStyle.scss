@@ -31,7 +31,7 @@ nav{
         display: flex;
         gap: 1em;
         justify-content: space-evenly;
-
+        flex-wrap: wrap;
         .nav-logo{
             h5{
                 font-weight: bolder;
@@ -189,15 +189,7 @@ nav{
             }
             .recipes {
 
-                .meal-container{
-                    display: none;
-                }
-                // set only the first 6 items to display as block
-                .meal-container:nth-child(1),.meal-container:nth-child(2),
-                .meal-container:nth-child(3),.meal-container:nth-child(4),
-                .meal-container:nth-child(5),.meal-container:nth-child(6){
-                    display: block;
-                }
+                
                 
                 .meal-card {
                     background-color: var(--30-color);

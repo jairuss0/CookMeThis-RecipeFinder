@@ -4,10 +4,6 @@ const filterBtn = document.querySelector(".filter-btn");
 const mealBtns = document.querySelector(".meal-div");
 const areaBtns = document.querySelector(".area-div");
 
-const loadMoreDiv = document.querySelector(".load-more");
-const goBackDiv = document.querySelector(".goBack");
-const loadMoreBtn = document.querySelector(".load-btn");
-
 const recipesParentDiv = document.querySelector(".recipes-result");
 const loadingAnimation = document.querySelector(".loader");
 const loadingText = document.querySelector(".text-result");
@@ -253,35 +249,6 @@ function renderMeals(response) {
 
 
 
-// load more functionality
-let currentRecipes = 6;
-
-loadMoreBtn.addEventListener('click',() => {
-  console.log(mealContainer);
-  for(let i = currentRecipes; i < currentRecipes + 3; i++){
-      if(mealContainer[i]){
-        mealContainer[i].style.display = 'block';
-      }
-  }
-  currentRecipes += 3;
-
-  if(currentRecipes >= mealContainer.length){
-    loadMoreDiv.style.visibility = "hidden";
-    
-  }
-  
-});
-
-// remove the load more button if the result is less than recipe per page
-function checkMealLength(mealLength){
-  if(mealLength <= 6){
-    loadMoreDiv.style.visibility = "hidden";
-    goBackDiv.style.visibility = "hidden";
-  }
-}
-
-
-
 
 // if user keyup pressed an enter
 document.onkeyup = (e) => {
@@ -302,20 +269,17 @@ function removeActiveButtons(buttons){
 // hide loading animation
 function hideAnimation(){
   loadingAnimation.style.display = "none";
-  goBackDiv.style.visibility = "visible";
-  loadMoreDiv.style.visibility = "visible";
+
 }
 // hide animation
 function showAnimation(){
   loadingAnimation.style.display = "flex";
-  goBackDiv.style.visibility = "hidden";
-  loadMoreDiv.style.visibility = "hidden";
+
 }
 // initally load animation
 function initialLoadingAnimation(){
   loadingAnimation.style.display = "flex";
-  goBackDiv.style.visibility = "hidden";
-  loadMoreDiv.style.visibility = "hidden";
+
 }
 
 // display result loading message
