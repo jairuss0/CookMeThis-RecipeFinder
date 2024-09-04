@@ -20,6 +20,7 @@ const recipeContainer = document.querySelector(".recipe-container");
 const recipeCount = document.getElementById("favourites-count");
 const mealSourceLink = document.querySelector('.link');
 
+
 // get the url query parameter id
 const params = new URLSearchParams(window.location.search);
 const recipeId = params.get("id");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+  
 addToFavBtn.addEventListener('click', () =>{
   if(addToFavBtn.classList.contains("remove-fav-btn")){
     removeMealFromLocalStorage(recipeId);
@@ -118,6 +119,9 @@ async function loadRecipeItem() {
       const recipeResponse = await fetchRecipeDetailsById(recipeId);
       renderRecipe(recipeResponse);
     } catch (error) {
+      console.log("id not valid!");
+      errorMessage.style.display = "block";
+      recipeContainer.style.display = "none";
       console.error(error);
     }
   }
@@ -179,7 +183,7 @@ function renderRecipe(response) {
 
     }
     
-    
+
   }
 
   if(response.meals[0].strYoutube === ''){

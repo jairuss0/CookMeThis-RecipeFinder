@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () =>{
   getResponseByAreaList();
   loadLocalStorageRecipeItems();
   countFavRecipe();
+  
 })
 
 let recipeItems;
@@ -57,19 +58,23 @@ async function fetchApiResponseByIngredient(ingredient) {
 
 // get the response
 async function getResponseByIngredient() {
-  const ingredientInput = recipeInput.value.toLowerCase();
+  const ingredientInput = recipeInput.value.toLowerCase().trim();
   if (ingredientInput) {
+    recipesParentDiv.innerHTML = "";
     try {
       const responseIngredient = await fetchApiResponseByIngredient(ingredientInput);
-      // pass the response onto the render function
-      recipeInput.value = "";
-      renderMeals(responseIngredient);
-      console.log(responseIngredient.meals.length);
-      checkMealLength(responseIngredient.meals.length);
+      
+        // pass the response onto the render function
+        recipeInput.value = "";
+        renderMeals(responseIngredient);
+        console.log(responseIngredient.meals.length);
+    
     } catch (error) {
+      
       displayLoadingMessage("No recipe found!");
-      showAnimation();
+      showAnimation();      
       // create a function to render error on webpage
+      
     }
    
   }
@@ -120,6 +125,7 @@ async function fetchApiResponseByAreaList() {
 // get the category meal response
 async function getResponseByAreaList() {
   try {
+    
     const responseByAreaBtns = await fetchApiResponseByAreaList();
     renderAreaBtns(responseByAreaBtns);
   } catch (error) {
@@ -128,10 +134,11 @@ async function getResponseByAreaList() {
 }
 async function getResponseByArea(area){
   try{
+    recipesParentDiv.innerHTML = "";
     const responseAreaMeals = await fetchApiReponsebyArea(area);
     renderMeals(responseAreaMeals);
     console.log(responseAreaMeals.meals.length);
-    checkMealLength(responseAreaMeals.meals.length);
+    
   }catch(error){
     console.error(error);
   }
@@ -154,10 +161,11 @@ async function fetchApiReponsebyArea(area){
 }
 async function getResponseByMealCategory(mealCategory){
   try{
+    recipesParentDiv.innerHTML = "";
     const responseByMeals = await fetchApiReponsebyMealCategory(mealCategory);
     renderMeals(responseByMeals);
     console.log(responseByMeals.meals.length);
-    checkMealLength(responseByMeals.meals.length);
+    
   }catch(error){
     console.error(error);
   }
@@ -227,7 +235,7 @@ function renderAreaBtns(response){
 let mealContainer;
 // render meals via response 
 function renderMeals(response) {
-  console.log(response);
+  
   let recipeCard = "";
 
   if (response) {
@@ -274,7 +282,6 @@ function hideAnimation(){
 // hide animation
 function showAnimation(){
   loadingAnimation.style.display = "flex";
-
 }
 // initally load animation
 function initialLoadingAnimation(){
@@ -285,6 +292,12 @@ function initialLoadingAnimation(){
 // display result loading message
 function displayLoadingMessage(message){
   loadingText.textContent = message;
+}
+
+function animationPreLoad(){
+  setTimeout(() => {
+    showAnimation();
+  }, 1000);
 }
 
 
