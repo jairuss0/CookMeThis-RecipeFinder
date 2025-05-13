@@ -1,14 +1,10 @@
-# cookMeThisVue
+# cookMeThis
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple recipe finder website using vue.js 3 composition API
 
-## Recommended IDE Setup
+- users can store their favourite recipe via localStorage
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Free API by [mealdb.com](https://www.themealdb.com/)
 
 ## Project Setup
 
