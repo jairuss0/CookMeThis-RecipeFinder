@@ -8,7 +8,7 @@ const props = defineProps({
   },
   description: {
     type: String,
-    default: 'search for meals and snacks that suit your tastes!',
+    default: 'Explore popular meals and snacks!',
   },
   isSearchPage: {
     type: Boolean,
@@ -20,11 +20,13 @@ const props = defineProps({
   },
 })
 // define emits to emit the search value to the parent component
-// this is used to update the search value in the parent component
-const emit = defineEmits(['update:search'])
+// this is used to update the search value and the type in the parent component
+const emit = defineEmits(['update:search', 'searchType'])
 
+// update search prop to be pass into the parent component
 const updateSearch = (event) => {
   emit('update:search', event.target.value)
+  emit('searchType', 'ingredients') // pass the new data to parent component
 }
 </script>
 <template>

@@ -13,8 +13,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  type: {
+    type: String,
+    default: '',
+  },
 })
 
+// an event for click to display more cards if its still valid
 const seeMore = () => {
   console.log('recipe length: ', recipes.value.length)
   if (limit.value < recipes.value.length) {
@@ -28,15 +33,15 @@ let hasSearched = ref(false)
 
 // use watch to watch for changes in the search prop and fetch recipes when it changes
 watch(
-  // watch the search prop for changes
-  () => props.search,
-  async (newSearch) => {
+  //use getters to watch the search  and type prop for changes
+  [() => props.search, () => props.type],
+  async ([newSearch, newType]) => {
     if (newSearch.trim() === '') {
       return
     }
 
     // fetch recipes based on the search value
-    await fetchRecipes(newSearch)
+    await fetchRecipes(newSearch, newType)
     hasSearched.value = true // set hasSearched to true when the user has searched for recipes
     limit.value = 4 // reset limit value if search changes
   },
@@ -44,6 +49,7 @@ watch(
 </script>
 <template>
   <section class="container mx-auto px-5 lg:px-20 py-5">
+    <!---check if loading is true and the user has searched--->
     <div v-if="loading && hasSearched" class="loader flex justify-center items-center min-h-[40vh]">
       <Loader
         title="Loading Recipes..."
@@ -52,6 +58,7 @@ watch(
     </div>
 
     <div v-else class="flex items-center justify-center">
+      <!---check if user has search and the data is null or empty otherwise display it--->
       <div
         v-if="hasSearched && (recipes === null || recipes.length === 0)"
         class="flex flex-col items-center min-h-[40vh] justify-center p-3"
@@ -66,6 +73,7 @@ watch(
         >
           <Card v-for="recipe in recipes.slice(0, limit)" :key="recipes.idMeal" :recipe="recipe" />
         </div>
+        <!---only display the see more button if the limit is less than the data length and greater than 4--->
         <div v-if="recipes.length > 4 && limit < recipes.length" class="p-5 text-center">
           <button @click="seeMore" class="btn btn-success btn-large">See more</button>
         </div>
